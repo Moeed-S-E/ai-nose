@@ -48,6 +48,24 @@ streamlit run app.py               # 3. open the app in your browser
 
 </details>
 
+## ☁️ Deploy on Streamlit Community Cloud
+
+1. Push this repository to GitHub.
+2. In Streamlit Community Cloud, create an app from the repository, select
+   branch `main`, and set the main file path to `app.py`.
+3. Make sure the repository includes the root `requirements.txt`,
+   `samples.json`, and
+   `openpom-main/openpom/data/curated_datasets/curated_GS_LF_merged_4983.csv`.
+4. Deploy, open the app, and press **Sniff**. If the trained model files are
+   absent, the app trains them on the first sniff and shows a notice. The
+   molecule model can take a few minutes to train on a cloud CPU.
+
+The generated files under `artifacts/` are intentionally gitignored; do not
+commit them just to deploy. Models are cached while the app process is running.
+If the service restarts and its local artifacts are unavailable, it will train
+them again. If a first-run training attempt fails due to the hosting machine's
+resource limits, train a smaller model or use a host with more memory/CPU.
+
 ## 🎛️ What you can do
 
 | | |

@@ -12,8 +12,9 @@ import numpy as np
 import streamlit as st
 
 from sensor import CHANNELS, sniff
-from smell_model import MODEL_PATH, load_model, predict_molecule_odors
+from smell_model import MODEL_PATH, load_model, predict_molecule_odors, train_model
 from train_nose import MODEL_PATH as NOSE_MODEL_PATH
+from train_nose import train_nose
 
 try:
     import plotly.graph_objects as go
@@ -40,15 +41,15 @@ def load_samples() -> dict[str, dict[str, Any]]:
 
 @st.cache_resource
 def load_smell_model() -> dict[str, Any]:
+    if not MODEL_PATH.is_file():
+        train_model(model_path=MODEL_PATH)
     return load_model(MODEL_PATH)
 
 
 @st.cache_resource
 def load_nose_model() -> dict[str, Any]:
     if not NOSE_MODEL_PATH.is_file():
-        raise FileNotFoundError(
-            f"Trained nose model not found at {NOSE_MODEL_PATH}. Run `python train_nose.py` first."
-        )
+        train_nose(model_path=NOSE_MODEL_PATH)
     return joblib.load(NOSE_MODEL_PATH)
 
 
@@ -307,6 +308,17 @@ st.markdown(
     '<div class="sim-note">Simulated sensor: scores are not measurements from physical hardware.</div>',
     unsafe_allow_html=True,
 )
+
+missing_models = []
+if not NOSE_MODEL_PATH.is_file():
+    missing_models.append("simulated nose")
+if not MODEL_PATH.is_file():
+    missing_models.append("molecule odor")
+if missing_models:
+    st.info(
+        f"First use will train the missing {', '.join(missing_models)} model(s) "
+        "on this app instance. The first Sniff may take a few minutes."
+    )
 
 samples = load_samples()
 with st.sidebar:
