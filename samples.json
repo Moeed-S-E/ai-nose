@@ -1,0 +1,62 @@
+{
+  "Coffee": {
+    "description": "Roasted coffee aroma",
+    "molecules": [
+      {"name": "2-furfurylthiol", "smiles": "SCC1=CC=CO1"},
+      {"name": "2-methylpyrazine", "smiles": "Cc1nccnc1"},
+      {"name": "Furfural", "smiles": "O=Cc1ccco1"},
+      {"name": "Guaiacol", "smiles": "COc1ccccc1O"},
+      {"name": "2,3-butanedione", "smiles": "CC(=O)C(C)=O"}
+    ]
+  },
+  "Vanilla candle": {
+    "description": "Vanilla-like fragrance",
+    "molecules": [
+      {"name": "Vanillin", "smiles": "COc1cc(C=O)ccc1O"},
+      {"name": "Ethyl vanillin", "smiles": "CCOc1cc(C=O)ccc1O"},
+      {"name": "Anisaldehyde", "smiles": "COc1ccc(C=O)cc1"},
+      {"name": "Coumarin", "smiles": "O=C1OC2=CC=CC=C2C=C1"},
+      {"name": "Heliotropin", "smiles": "O=Cc1ccc2OCOc2c1"}
+    ]
+  },
+  "Mint": {
+    "description": "Minty, cooling aroma",
+    "molecules": [
+      {"name": "Menthol", "smiles": "CC(C)C1CC(C)CC(O)C1"},
+      {"name": "Menthone", "smiles": "CC(C)C1CC(=O)CC(C)C1"},
+      {"name": "1,8-cineole", "smiles": "CC1(C)C2CCC1(C)OC2"},
+      {"name": "Limonene", "smiles": "CC1=CCCC(C1)C(=C)C"},
+      {"name": "Carvone", "smiles": "CC1=CCC(CC1=O)C(=C)C"}
+    ]
+  },
+  "Lemon": {
+    "description": "Bright citrus aroma",
+    "molecules": [
+      {"name": "Limonene", "smiles": "CC1=CCCC(C1)C(=C)C"},
+      {"name": "Citral", "smiles": "CC(C)=CCCC(C)=CC=O"},
+      {"name": "Linalool", "smiles": "C=CC(C)(O)CCC=C(C)C"},
+      {"name": "Beta-pinene", "smiles": "CC1(C2CCC1(C2)C=C)C"},
+      {"name": "Gamma-terpinene", "smiles": "CC1=CCC(CC1)C(C)=C"}
+    ]
+  },
+  "Banana": {
+    "description": "Sweet, fruity aroma",
+    "molecules": [
+      {"name": "Isoamyl acetate", "smiles": "CC(=O)OCCC(C)C"},
+      {"name": "Butyl acetate", "smiles": "CCCCOC(=O)C"},
+      {"name": "2-methylbutyl acetate", "smiles": "CCC(C)COC(=O)C"},
+      {"name": "Isoamyl alcohol", "smiles": "CC(C)CCO"},
+      {"name": "Isobutyl acetate", "smiles": "CC(C)COC(=O)C"}
+    ]
+  },
+  "Wood smoke": {
+    "description": "Smoky, phenolic aroma",
+    "molecules": [
+      {"name": "Guaiacol", "smiles": "COc1ccccc1O"},
+      {"name": "Syringol", "smiles": "COc1cc(C=O)cc(OC)c1O"},
+      {"name": "o-Cresol", "smiles": "Cc1ccccc1O"},
+      {"name": "Furfural", "smiles": "O=Cc1ccco1"},
+      {"name": "Phenol", "smiles": "Oc1ccccc1"}
+    ]
+  }
+}
